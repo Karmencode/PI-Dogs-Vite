@@ -1,0 +1,18 @@
+.divCar{
+    display: flex;
+    flex-direction: column;
+    background-color: rgb(134, 87, 33);
+    border: 1px solid burlywood;
+    border-radius: 5px;
+    padding: 25px;
+    cursor: pointer;
+    -moz-osx-smoothing: graysacle;
+    backface-visibility: hidden;
+    transform: translateZ(0);
+    transition: transform 0.25s ease-out;
+
+}
+
+.divCar:hover{
+    transform: scale(1.05);
+}
