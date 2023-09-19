@@ -3,14 +3,16 @@ import { useEffect, useState } from 'react'
 import { useSelector, useDispatch } from 'react-redux';
 import AllCards from '../AllCards/AllCards';
 import NavBar from '../navbar/NavBar';
-import {getDogs} from '../../redux/actions';
+import {getDogs, getByName} from '../../redux/actions';
 
 
 
 
 function Home() {
-
     const dispatch = useDispatch();
+    
+    // ----------------------------------TRAER TODOS LOS DOGS----------------------------------------
+
     // 2. Hook useSelector  es la subscripcion a la store para traerme al subestado alldogs que ya se encuentra modificado por la action prev despachada.
     const allDogs = useSelector(state => state.allDogs)
 
@@ -18,11 +20,31 @@ function Home() {
     useEffect(() => {
         dispatch(getDogs())
     }, [dispatch])
+// ----------------------------------------------------------------------------------
+    
+// ---------------------------------TRAER RAZAS POR NOMBRE -----------------------------------------
+const [searchString, setSearchString] = useState('');  /* estado local para el string */
 
-    return (
+function handleChange(event) { /* para setear el estado local de la string */
+   event.preventDefault();
+   setSearchString(event.target.value);
+}
+
+function handleSubmit(event) { /* despachar la accion para modificar el estado alldogs */
+   event.preventDefault();
+   dispatch(getByName(searchString));
+}
+// -------------------------------VOLVER A OBTENER TODOS LOS  PERROS------------------------------------------------------------------
+function handleClick (event){
+    event.preventDefault();
+    dispatch(getDogs());
+    // window.location.reload(false);
+}
+
+return (
         <div >
-            <h3>hola es la home</h3>
-            <NavBar />
+            <NavBar handleChange={handleChange} handleSubmit={handleSubmit} handleClick={handleClick}/>
+            {/* <button onClick={event =>{handleClick(event)}}>All dogs</button> */}
             <AllCards allDogs={allDogs} />
 
         </div>

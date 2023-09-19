@@ -1,9 +1,16 @@
+img{
+    width:18vw;
+    height:18vw;
+    border-radius: 12px;
+    opacity: 0.82;
+}
+
 .divCar{
     display: flex;
     flex-direction: column;
-    background-color: rgb(134, 87, 33);
+    background-color: rgba(136, 95, 6, 0.575);
     border: 1px solid burlywood;
-    border-radius: 5px;
+    border-radius: 10px;
     padding: 25px;
     cursor: pointer;
     -moz-osx-smoothing: graysacle;

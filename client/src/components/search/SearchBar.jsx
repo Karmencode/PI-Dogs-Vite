@@ -1,17 +1,36 @@
-import { useState } from 'react';
+import React from 'react';
+import { useState } from 'react'
+import { useDispatch} from 'react-redux';
+import { getByName } from '../../redux/actions';
 
-export default function SearchBar({onSearch}) {
 
-    // function handleChange(evento){
-    //     setId(evento.target.value); 
-    //  }
 
+export default function SearchBar({handleChange, handleSubmit, handleClick}) {
+   // const dispatch = useDispatch();
+
+   
+   // ---------------------------------TRAER RAZAS POR NOMBRE -----------------------------------------
+   // const [searchString, setSearchString] = useState('');  /* estado local para el string */
+
+   // function handleChange(event) { /* para setear el estado local de la string */
+   //    event.preventDefault();
+   //    setSearchString(event.target.value);
+   // }
+
+   // function handleSubmit(event) { /* despachar la accion para modificar el estado alldogs */
+   //    event.preventDefault();
+   //    dispatch(getByName(searchString));
+   // }
    return (
       <div>
-         <input type='search'placeholder='Search breed'/>
-         <button>
-            Agregar {/* Cuando se necesita pasar argumentos a una funcion como arriba se hace mediante una callback */}
-         </button>
+         <form onChange={handleChange} >
+            <input type='search' name='search' placeholder='Search breed' />
+            <button type='submit' onClick={handleSubmit} >
+               Search {/* Cuando se necesita pasar argumentos a una funcion como arriba se hace mediante una callback */}
+            </button>
+            <button onClick={event =>{handleClick(event)}}>All Dogs</button>
+         </form>
+
       </div>
    );
-}
+} 

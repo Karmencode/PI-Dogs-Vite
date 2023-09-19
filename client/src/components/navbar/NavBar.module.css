@@ -1,0 +1,11 @@
+.divBar {
+    background-color: rgba(134, 28, 28, 0.384);
+    /* background-image: url('../images/s2.avif'); */
+    width: 97.2vw;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-evenly;
+    padding: 10px;
+    margin-bottom: 5em;
+    position: relative;
+}

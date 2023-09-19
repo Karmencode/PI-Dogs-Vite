@@ -1,12 +1,13 @@
 import SearchBar from '../search/SearchBar';
 import { Link } from 'react-router-dom';
+import style from './NavBar.module.css';
 
-function Nav({onSearch}){
+function Nav({handleChange, handleSubmit, handleClick}){  /* VIENEN DESDE HOME */
     return(
-        <nav >
+        <nav className={style.divBar}>
 
         <button >
-          <Link  to ='/'> Start </Link>
+          <Link  to ='/'> Landing </Link>
           </button>
 
          <button>
@@ -16,9 +17,9 @@ function Nav({onSearch}){
          <button>
           <Link to ='/create'>Create</Link>
           </button>
+          {/* <button onClick={event =>{handleClick(event)}}>All Dogs</button> */}
           
-
-          <SearchBar/>  
+          <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} handleClick={handleClick}/>  
           
         </nav>
     )
