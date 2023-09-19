@@ -7,9 +7,12 @@ module.exports = (sequelize) => {
     id:{type: DataTypes.UUID, defaultValue: DataTypes.UUIDV4, primaryKey: true, allowNull: false},
     image:{type: DataTypes.STRING, allowNull: false},
     name: { type: DataTypes.STRING, allowNull: false},
-    height:{type: DataTypes.DECIMAL, allowNull: false},
-    weight:{type: DataTypes.DECIMAL, allowNull:false},
-    life_span:{type: DataTypes.INTEGER, allowNull: false}
+    heightMin:{type: DataTypes.INTEGER, allowNull: false},
+    heightMax:{type: DataTypes.INTEGER, allowNull: false},
+    weightMin:{type: DataTypes.INTEGER, allowNull:false},
+    weightMax:{type: DataTypes.INTEGER, allowNull:false},
+    life_span:{type: DataTypes.INTEGER, allowNull: false},
+    createInDb:{type: DataTypes.BOOLEAN, allowNull:false, defaultValue:true},
   },
   {
     timestamps: false

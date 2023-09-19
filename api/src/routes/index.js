@@ -13,7 +13,6 @@
 // router.use('/temperament', routesTemperament);
 
 
-const {getAllDogs} = require('../controllers/getAllDogs');
 const getDogById = require ('../controllers/getDogById');
 const getDogByName = require('../controllers/getDogByName');
 const postDog = require('../controllers/postDog');
@@ -24,8 +23,8 @@ const router = Router();
 
 
 // router.get("/dogs", getAllDogs);
-router.get ( "/dogs/:id", getDogById);
 router.get ("/dogs", getDogByName);
+router.get ( "/dogs/:id", getDogById);
 router.post ( "/dogs", postDog);
 router.get ( "/temperaments", getTemperaments);
 router.delete("dogs/:id", deleteDog);

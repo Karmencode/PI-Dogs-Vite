@@ -12,10 +12,11 @@ async function getAllDogsApi() {
         let dogsApi = data.map((dog) => {
             return {
                 id: dog.id,
-                image: dog.reference_image_id,
+                image: dog.image.url,
                 name: dog.name,
                 height: dog.height.metric,
-                weight: dog.weight.metric,
+                weightMin: parseInt(dog.weight.metric.split("-")[0]),
+                weightMax: parseInt(dog.weight.metric.split("-")[1]),
                 temperament: dog.temperament,
                 life_span: dog.life_span,
             }
@@ -41,13 +42,15 @@ async function getAllDogsDb() {
                 id: dog.id,
                 image: dog.image,
                 name: dog.name,
-                height: dog.height,
-                weight: dog.weight,
+                height: `${dog.heightMin}-${dog.heightMax}`,
+                weightMin: dog.weight,
+                weightMax: dog.weight,
                 temperament: dog.temperaments.map(e => {return e.name}).join(','), /* recorrer el array que devuelve la DB y solo quedarse con el name */
-                life_span: dog.life_span
+                life_span: dog.life_span,
+                createInDb: dog.createInDb,
             }
         })
-        console.log(dogsDb);
+        // console.log(dogsDb);
         return dogsDb;
 
 }
@@ -57,6 +60,9 @@ const getAllDogs = async () =>{
     try {
         let dbDogs = await getAllDogsDb();
         let apiDogs = await getAllDogsApi();
+
+        /* console.log(dbDogs);
+        console.log(apiDogs); */
 
         if(!dbDogs || !apiDogs) throw new Error('Error loading data');
     

@@ -4,7 +4,7 @@ const {getAllDogsApi} = require('./getAllDogs');
 
 async function postDog(req, res) {
 try {
-    const {image, name, height, weight,temperament, life_span} = req.body;
+    const {image, name, heightMin, heightMax, weightMin, weightMax,temperament, life_span} = req.body;
     // console.log(req.doby);
     // console.log(image);
     // console.log(name);
@@ -19,14 +19,16 @@ try {
     let dogNameApi = await getAllDogsApi().then((dog) => dog.find((dog) => dog.name === name));
     
     // VALIDACIONES
-    if (!image || !name || !height || !weight || !life_span || !temperament){
+    if (!image || !name || !heightMax || !heightMax || !weightMin || !weightMax || !life_span || !temperament){
         return res.status(400).send('Your dog is not complete, data is missing');  
-    }else if(temperamentDb === null){
-        return res.status(400).send('Invalid Temperament');  
     }
+    if (heightMax < heightMin || weightMax < weightMin) return res.status(400).send('Incorrect data, check your information');
+    if (heightMin < 0 || weightMin < 0) return res.status(400).send('Invalid data');
+    if(temperamentDb === null) return res.status(400).send('Invalid Temperament');  
+    
     
     // Buscar o Crear el perro
-    const [dog, created] = await Dog.findOrCreate({where:{name}, defaults:{image,name, height, weight, life_span}});
+    const [dog, created] = await Dog.findOrCreate({where:{name}, defaults:{image,name, heightMin, heightMax, weightMin, weightMax, life_span}});
 
     // si created es true significa que ya habia un perro con estos datos por lo tanto regresamos que ya existe
     if (!created || dogNameApi) return res.status(404).send('The dog already exist');
