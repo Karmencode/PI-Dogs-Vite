@@ -12,7 +12,7 @@ function Detail() {
     const dispatch = useDispatch();
     const { id } = useParams();  /* Obtiene la info (id) del parametro variable de la url */
     const detail = useSelector((state) => state.dogDetail) /* me subscribo al subestado dogDetail */
-    console.log(detail);
+    // console.log(detail);
 
     // Cuando se monta el componente se despecha la accion para obtener el detalle 
     useEffect(() => {   
@@ -23,7 +23,7 @@ function Detail() {
         }
     }, [id])
 
-    console.log(id);
+    // console.log(id);
     return (
         <div className={style.divDet}>
             <div>
