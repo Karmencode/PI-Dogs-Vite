@@ -1,16 +1,16 @@
 img{
     width:18vw;
     height:18vw;
-    border-radius: 12px;
+    border-radius: 30px;
     opacity: 0.82;
 }
 
 .divCar{
     display: flex;
     flex-direction: column;
-    background-color: rgba(136, 95, 6, 0.575);
+    background-color: rgba(125, 87, 6, 0.631);
     border: 1px solid burlywood;
-    border-radius: 10px;
+    border-radius: 15px;
     padding: 25px;
     cursor: pointer;
     -moz-osx-smoothing: graysacle;
@@ -22,4 +22,27 @@ img{
 
 .divCar:hover{
     transform: scale(1.05);
+}
+.divh3{
+    margin-top: 1em;
+    text-align: center;
+    background-color: rgba(251, 192, 119, 0.181);
+}
+
+.h3Card{
+    margin: 3px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    /* font-family: monospace; */
+}
+.titulos{
+    color: rgb(40, 1, 1);
+    margin-bottom: 2px;
+}
+
+.linkCard{
+    margin-top: 1.5em;
+    text-align: center;
+    color: rgb(182, 0, 0);
+    font-size:20px;
+    text-shadow: 7px 4px 5px rgba(212, 205, 205, 0.737);
 }

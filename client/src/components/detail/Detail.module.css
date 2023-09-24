@@ -15,7 +15,7 @@
 
 .divTxD{
     width: 35vw;
-    background-color: rgba(156, 114, 65, 0.308);
+    background-color: rgba(156, 114, 65, 0.485);
     border: 1px solid burlywood;
     border-radius: 5px;
     margin-top: 5px;
@@ -41,11 +41,31 @@
     width: 30vw;
     height: 30vw;
     border-radius: 15em;
-    margin-top: 4rem;
+    margin-top: 1rem;
     filter:saturate(200%);
-    opacity: 0.75;
+    opacity: 0.85;
+    border: 20px solid rgba(206, 203, 28, 0.304);
+
 }
 
 .h3d{
     color: rgb(255, 255, 255);
+    margin: 5px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+    padding: 0.4em;
+}
+.h3d:hover{
+    color: black;
+}
+.linkReturn{
+    background-color: rgb(25, 6, 6);
+    width: 5em;
+    height: 2em;
+    border-radius: 5px;
+    padding: 4px;
+    font-size: larger;
+    text-align: center;
+    margin-left: 15vw;
+    font-weight: 900;
+    margin-top: 10px;
 }

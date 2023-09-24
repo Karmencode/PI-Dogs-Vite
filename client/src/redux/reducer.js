@@ -83,21 +83,6 @@ function reducer(state = initialState, action) {
                 dogFilter: sortedDogFilter,
             };
 
-
-        // const { payload } = action;
-        // const isAscending = payload === "min";
-
-        // const sortedDogFilter = [...state.dogFilter].sort((a, b) => {
-        //     const compareValue = isAscending ? 1 : -1;
-        //     return (a.weightMin - b.weightMin) * compareValue;
-        // });
-
-        // return {
-        //     ...state,
-        //     dogFilter: sortedDogFilter,
-
-        // };
-
         case FILTER_TEMPERAMENTS:
             const allDogsCopyTemp = [...state.allDogs]
             if (action.payload === 'all') {
@@ -108,12 +93,6 @@ function reducer(state = initialState, action) {
                     return dog.temperament.includes(action.payload);
                 })
             }
-            // aux = action.payload === "all"
-            //     ? state.allDogs
-            //     : state.dogFilter.filter(dog => {
-            //         if (!dog.temperament) return undefined; /* si el perro no tiene temperaemnto no lo muestro */
-            //         return dog.temperament.includes(action.payload)
-            //     })
             return {
                 ...state,
                 dogFilter: aux,

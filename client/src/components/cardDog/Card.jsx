@@ -7,14 +7,21 @@ function Card({ id, image, name, height, weightMin, weightMax, temperament, life
     return (
         <div className={style.divCar}>
             <img src={image} alt='dogs' />
-            <h5>{id}</h5>
-            <Link to={`/detail/${id}`}>
-                <h3>Name:{name}</h3>  {/* Al hacer click en el nombre nos dirigira al datail del dog por su id */}
+            <Link to={`/detail/${id}`} className={style.linkCard}>
+                <h3 className={style.h3Card}>{name}</h3> 
             </Link>
-            {/* <h3>{height}</h3> */}
-            <h3>Min.Weight: {weightMin} Kg / Max.Weight: {weightMax} Kg</h3>
-            <h3>Temperament:{temperament}</h3>
-            {/* <h3>{life_span}</h3> */}
+            <div className={style.divh3}>
+                <h3 className={style.titulos}>Min.Weight:</h3>
+                <h3 className={style.h3Card}>{weightMin} Kg</h3>
+            </div>
+            <div className={style.divh3}>
+                <h3 className={style.titulos}>Max.Weight:</h3>
+                <h3 className={style.h3Card}>{weightMax} Kg</h3>
+            </div>
+            <div className={style.divh3}>
+                <h3 className={style.titulos}>Temperament: </h3>
+                <h3 className={style.h3Card}>{temperament}</h3>
+            </div>
         </div>
     )
 }

@@ -31,7 +31,7 @@ export const getByName =(name) =>{
             });
             
         } catch (error) {
-            console.log(error.message);
+            alert(error.message);
         }
         
     };
@@ -64,7 +64,7 @@ export const getTemperaments =() =>{
                 payload:data,
             })
         } catch (error) {
-            console.log(error.message);
+            alert(error.message);
         }
     }
 }
@@ -84,7 +84,9 @@ export const postDog =(createDog) =>{
             const posted = await axios.post(endpoint,createDog);
             return  dispatch ({ type:POST_DOG, payload: posted.data})
         } catch (error) {
-            return Response.status(404).json({error: error.message})
+            console.log(error.message);
+            alert(error.message)
+            // response.status(404).json({error: error.message})
             // alert('The dog can not be created');
         }
     }

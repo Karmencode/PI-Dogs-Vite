@@ -2,7 +2,7 @@ import SearchBar from '../search/SearchBar';
 import { Link } from 'react-router-dom';
 import style from './NavBar.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { useEffect, useState } from 'react';
+import { useState } from 'react';
 import { orderByName, orderByWeight, filterOrigin, filterTemperament } from '../../redux/actions';
 
 function Nav({ handleChange, handleSubmit, handleClick }) {  /* VIENEN DESDE HOME */
@@ -39,7 +39,7 @@ function Nav({ handleChange, handleSubmit, handleClick }) {  /* VIENEN DESDE HOM
 
   return (
     <nav className={style.divBar}>
-{/* -----------------------------------------Filtros y ordenamientos----------------------------------------------------------- */}
+      {/* -----------------------------------------Filtros y ordenamientos----------------------------------------------------------- */}
 
       <select defaultValue="CREATED" onChange={(event) => handleFiltOrigin(event)}>
         <option value="CREATED" disabled>Filter Origin </option>
@@ -49,7 +49,7 @@ function Nav({ handleChange, handleSubmit, handleClick }) {  /* VIENEN DESDE HOM
       </select>
 
       <select defaultValue="TEMP" onChange={(event) => handleFiltTemp(event)}>
-        <option value= "TEMP" disabled>Filter Temperaments </option>
+        <option value="TEMP" disabled>Filter Temperaments </option>
         <option value="all">All</option>
         {temperaments.map((temp) => (
           <option key={temp.id} value={temp.name}>
@@ -61,13 +61,13 @@ function Nav({ handleChange, handleSubmit, handleClick }) {  /* VIENEN DESDE HOM
       </select>
 
       <select defaultValue="ALP" onChange={(event) => handleOrderName(event)}>
-        <option value ="ALP" disabled>Order by Name</option>
+        <option value="ALP" disabled>Order by Name</option>
         <option value="asc">A-Z</option>
         <option value="desc">Z-A</option>
       </select>
 
       <select defaultValue="WEIGHT" onChange={(event) => handleOrderWeight(event)}>
-        <option value= "WEIGHT" disabled>Order by Weight</option>
+        <option value="WEIGHT" disabled>Order by Weight</option>
         <option value="min">Weight Min</option>
         <option value="max">Weight Max</option>
       </select>
