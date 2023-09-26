@@ -1,0 +1,13 @@
+.input{
+    height: 2.9em;
+    width: 10em;
+    border-radius: 1em 0% 0% 1em;
+    background-color: rgba(245, 243, 228, 0.665);
+    border-color: blanchedalmond;
+    color: black;
+}
+.buttonSearch{
+    margin-right: 1em;
+    border-radius: 0 1em 1em 0;
+    padding-top: 0.4em;
+}

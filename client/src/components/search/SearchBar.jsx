@@ -2,6 +2,7 @@ import React from 'react';
 import { useState } from 'react'
 import { useDispatch} from 'react-redux';
 import { getByName } from '../../redux/actions';
+import style from './Search.module.css';
 
 
 
@@ -24,8 +25,8 @@ export default function SearchBar({handleChange, handleSubmit, handleClick}) {
    return (
       <div>
          <form onChange={handleChange} >
-            <input type='search' name='search' placeholder='Search breed' />
-            <button type='submit' onClick={handleSubmit} >
+            <input className={style.input} type='search' name='search' placeholder='Search breed' />
+            <button className={style.buttonSearch} type='submit' onClick={handleSubmit} >
                Search {/* Cuando se necesita pasar argumentos a una funcion como arriba se hace mediante una callback */}
             </button>
             <button onClick={event =>{handleClick(event)}}>All Dogs</button>

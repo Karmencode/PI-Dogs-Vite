@@ -1,23 +1,28 @@
-.divImage{
-    background-image: url('https://st2.depositphotos.com/1106005/8592/i/450/depositphotos_85929920-stock-photo-black-and-white-doggy-tile.jpg');
-    /* background-color: aqua; */
-    height: 100vw;
-    width: 50vw;
-  /* background-repeat: no-repeat; */
-  /* margin-left: 25vw; */
-  background-size:contain;
-  background-position:top,center;
-   background-attachment: fixed;
-  
+.divMain {
+    display: flex;
+    flex-direction: row;
 }
-.divText{
-    height: 100vw;
+.divImage {
+    /* background-image: url('https://st2.depositphotos.com/1106005/8592/i/450/depositphotos_85929920-stock-photo-black-and-white-doggy-tile.jpg'); */
+    background-image: url('../images/form2.png');
+    height: 47.6vw;
+    width: 46.2vw;
+    background-size: contain;
+    background-position: top, center;
+    background-attachment: fixed;
+    opacity: 0.7;
+
+}
+
+.divText {
     width: 50vw;
     text-align: center;
+    margin-right: 3.2em;
 }
 
 
-.divMain{
-    display:flex;
-    flex-direction: row;
+.divTextos{
+    margin: 9em;
+    margin-top: 2em;
+    position: fixed;
 }

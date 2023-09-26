@@ -1,6 +1,5 @@
 .divBar {
     background-color: rgba(134, 28, 28, 0.384);
-    /* background-image: url('../images/s2.avif'); */
     width: 97.2vw;
     display: flex;
     flex-wrap: wrap;
@@ -9,4 +8,11 @@
     margin-bottom: 5em;
     position: absolute;
     top: 0px;
+}
+
+.selectFilters{
+    background-color: rgb(83, 4, 4);
+    border-radius: 10px;
+    color: whitesmoke;
+    font-weight: bolder;
 }

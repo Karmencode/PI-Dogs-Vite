@@ -7,15 +7,17 @@ function Landing() {
     return (
         <div className={style.divMain}>
             <div className={style.divText}>
-                <h1>Do you like dogs?</h1>
-                <h2>This is the place for you</h2>
+                <div className={style.divTextos}>
+                    <h1>Do you like dogs?</h1>
+                    <h2>This is the place for you</h2>
 
-                <Link to='/home'>
-                    <button>Lets Go!</button>
-                </Link>
+                    <Link to='/home'>
+                        <button>Lets Go! 🐶</button>
+                    </Link>
+                </div>
+
             </div>
-            <div className={style.divImage}>
-            </div>
+            <div className={style.divImage}> </div>
         </div>
     )
 }

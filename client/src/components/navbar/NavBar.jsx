@@ -5,6 +5,8 @@ import { useSelector, useDispatch } from 'react-redux';
 import { useState } from 'react';
 import { orderByName, orderByWeight, filterOrigin, filterTemperament } from '../../redux/actions';
 
+
+
 function Nav({ handleChange, handleSubmit, handleClick }) {  /* VIENEN DESDE HOME */
 
   const dispatch = useDispatch();
@@ -39,16 +41,23 @@ function Nav({ handleChange, handleSubmit, handleClick }) {  /* VIENEN DESDE HOM
 
   return (
     <nav className={style.divBar}>
-      {/* -----------------------------------------Filtros y ordenamientos----------------------------------------------------------- */}
 
-      <select defaultValue="CREATED" onChange={(event) => handleFiltOrigin(event)}>
+      <button >
+        <Link to='/'> Landing </Link>
+      </button>
+
+      <button>
+        <Link to='/create'>Create</Link>
+      </button>
+
+      <select className={style.selectFilters} defaultValue="CREATED" onChange={(event) => handleFiltOrigin(event)}>
         <option value="CREATED" disabled>Filter Origin </option>
         <option value="all">All</option>
         <option value="api">Api</option>
         <option value="db">DB</option>
       </select>
 
-      <select defaultValue="TEMP" onChange={(event) => handleFiltTemp(event)}>
+      <select className={style.selectFilters} defaultValue="TEMP" onChange={(event) => handleFiltTemp(event)}>
         <option value="TEMP" disabled>Filter Temperaments </option>
         <option value="all">All</option>
         {temperaments.map((temp) => (
@@ -60,32 +69,20 @@ function Nav({ handleChange, handleSubmit, handleClick }) {  /* VIENEN DESDE HOM
         )}
       </select>
 
-      <select defaultValue="ALP" onChange={(event) => handleOrderName(event)}>
+      <select className={style.selectFilters} defaultValue="ALP" onChange={(event) => handleOrderName(event)}>
         <option value="ALP" disabled>Order by Name</option>
         <option value="asc">A-Z</option>
         <option value="desc">Z-A</option>
       </select>
 
-      <select defaultValue="WEIGHT" onChange={(event) => handleOrderWeight(event)}>
+      <select className={style.selectFilters} defaultValue="WEIGHT" onChange={(event) => handleOrderWeight(event)}>
         <option value="WEIGHT" disabled>Order by Weight</option>
         <option value="min">Weight Min</option>
         <option value="max">Weight Max</option>
       </select>
 
 
-      {/* --------------------------------------------------------------------------------- */}
 
-      <button >
-        <Link to='/'> Landing </Link>
-      </button>
-
-      <button>
-        <Link to='/home'> Home </Link>
-      </button>
-
-      <button>
-        <Link to='/create'>Create</Link>
-      </button>
 
       <SearchBar handleChange={handleChange} handleSubmit={handleSubmit} handleClick={handleClick} />
 
