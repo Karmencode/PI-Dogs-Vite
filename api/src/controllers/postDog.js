@@ -52,7 +52,7 @@ try {
     })
 //  console.log(newDog);
 
-    return res.status(200).json({dog: newDog, message:'The dog was created successfully'});
+    return res.status(201).json({dog: newDog, message:'The dog was created successfully'});
 } catch (error) {
     return res.status(500).send(error.message);
 }

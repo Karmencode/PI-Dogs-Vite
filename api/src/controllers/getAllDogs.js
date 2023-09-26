@@ -43,10 +43,10 @@ async function getAllDogsDb() {
                 image: dog.image,
                 name: dog.name,
                 height: `${dog.heightMin}-${dog.heightMax}`,
-                weightMin: dog.weight,
-                weightMax: dog.weight,
+                weightMin: dog.weightMin,
+                weightMax: dog.weightMax,
                 temperament: dog.temperaments.map(e => {return e.name}).join(','), /* recorrer el array que devuelve la DB y solo quedarse con el name */
-                life_span: dog.life_span,
+                life_span: `${dog.life_span} years`,
                 createInDb: dog.createInDb,
             }
         })
