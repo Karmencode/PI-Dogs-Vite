@@ -1,15 +1,22 @@
 import { useDispatch, useSelector } from 'react-redux';
 import style from './CreateDog.module.css';
-import { useState } from 'react';
+import { useState, useEffect } from 'react';
 import validate from '../validation/validationInputs';
 import validateSubmit from '../validation/validationSubmit';
-import { postDog } from '../../redux/actions';
+import { getDogs, postDog } from '../../redux/actions';
 import { Link } from 'react-router-dom';
+import { getTemperaments } from '../../redux/actions';
 
 function CreateDog() {
 
     const allTemperaments = useSelector(state => state.temperaments);
     const dispatch = useDispatch();
+
+    useEffect(() => {
+        dispatch(getTemperaments())
+
+        return () => dispatch(getDogs());
+    }, [dispatch])
 
     // crear un estado local para guardar las respuestas
     const [state, setState] = useState({
@@ -75,9 +82,9 @@ function CreateDog() {
     return (
         <div className={style.divContForm}>
             <div className={style.divForm}>
-                {console.log(errors)}
+                {/* {console.log(errors)} */}
                 <form onSubmit={handleSubmit}> {/* onSubmit es un evento de la etiqueta Form por lo tanto va aquí */}
-                    <h2 className={style.h2Form}>CREATE YOUR DOG</h2>
+                    <h2 className={style.h2Form}>CREATE YOUR DOG.... 🐶</h2>
 
                     <div className={style.divInputs}>
                         <label htmlFor="image">Image: </label>
@@ -131,7 +138,7 @@ function CreateDog() {
                         </select>
                         <div className={style.options}>
                             {
-                                state.temperament.map((temp) => <div key={temp}> <span>{temp}</span> <button type='button' id={temp} name='temperament' onClick={remove}>X</button></div>)
+                                state.temperament.map((temp) => <div key={temp}> <span className={style.spanForm}>{temp}</span> <button className={style.buttonOptions}type='button' id={temp} name='temperament' onClick={remove}>X</button></div>)
                             }
                         </div>
                         {errors.temperament && <p>{errors.temperament}</p>}
@@ -141,7 +148,7 @@ function CreateDog() {
                 </form>
             </div>
 
-                <Link to='/home'  className={style.linkRetForm}>Home 🐶</Link>
+                <Link to='/home'  className={style.linkRetForm}>Home 🐾</Link>
             <div className={style.divPreVw}>
             <img src={state.image} alt={state.name}/>
                 <h2>Name: {state?.name}</h2>

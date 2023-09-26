@@ -42,6 +42,8 @@
     flex-direction: row;
     color: rgb(246, 255, 0);
     width: 350px;
+    font-size:smaller;
+    margin-top: 1.5em;
 }
 
 .input1{
@@ -79,4 +81,14 @@ p{
     font-weight: 900;
     margin-top: 1em;
     
+}
+
+.buttonOptions{
+    width: 20px;
+    height: auto;
+    font-size: x-small;
+    padding: 5px;
+    background-color: rgb(90, 9, 9);
+    margin-right: 10px;
+
 }

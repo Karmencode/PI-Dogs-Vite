@@ -1,6 +1,6 @@
 img{
-    width:18vw;
-    height:18vw;
+    width:17vw;
+    height:17vw;
     border-radius: 30px;
     opacity: 0.82;
 }
@@ -17,6 +17,7 @@ img{
     backface-visibility: hidden;
     transform: translateZ(0);
     transition: transform 0.25s ease-out;
+    /* align-items: center; */
 
 }
 
@@ -31,18 +32,19 @@ img{
 
 .h3Card{
     margin: 3px;
-    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
-    /* font-family: monospace; */
+    /* font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif; */
+    font-family: monospace;
 }
 .titulos{
     color: rgb(40, 1, 1);
     margin-bottom: 2px;
+    margin-top: 0;
 }
 
 .linkCard{
     margin-top: 1.5em;
     text-align: center;
     color: rgb(182, 0, 0);
-    font-size:20px;
+    font-size:18px;
     text-shadow: 7px 4px 5px rgba(212, 205, 205, 0.737);
 }

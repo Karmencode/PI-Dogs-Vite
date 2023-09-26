@@ -13,13 +13,16 @@ function Home() {
     
     // ----------------------------------TRAER TODOS LOS DOGS----------------------------------------
 
-    // 2. Hook useSelector  es la subscripcion a la store para traerme al subestado alldogs que ya se encuentra modificado por la action prev despachada.
+    // 2. Hook useSelector  es la subscripcion a la store para traerme al subestado alldogs
     const allDogs = useSelector(state => state.dogFilter)
 
-    // 1.Cuando se monte el componente despacaha la action para obteer todos los dogs y guardarlos en la store.
+    // 1.Cuando se monte el componente despacha la action para obtener todos los dogs y guardarlos en la store.
     useEffect(() => {
-        dispatch(getDogs())
-        dispatch(getTemperaments())
+        window.localStorage.setItem('currentPage', 1) /* para guardar en el navegador la pag donde se encuentra el usuario */
+        if(allDogs.length === 0){ /* si el estado es = 0 se despachan las actions */
+            dispatch(getDogs())
+            dispatch(getTemperaments())
+        }
     }, [dispatch])
 // ----------------------------------------------------------------------------------
     
@@ -44,6 +47,7 @@ function handleClick (event){
 
 return (
         <div >
+            {console.log(allDogs.length)}
             <NavBar handleChange={handleChange} handleSubmit={handleSubmit} handleClick={handleClick}/>
             {/* <button onClick={event =>{handleClick(event)}}>All dogs</button> */}
             <AllCards allDogs={allDogs} />

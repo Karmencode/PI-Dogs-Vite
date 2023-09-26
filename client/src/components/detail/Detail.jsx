@@ -50,7 +50,7 @@ function Detail() {
                     <h3 className={style.h3d}>Life_Span: {detail?.life_span}</h3>
                 </div>
 
-                    <Link to='/home'  className={style.linkReturn}> Home 🐶</Link>
+                    <Link to='/home'  className={style.linkReturn}> Home 🐾</Link>
 
             </div>
 

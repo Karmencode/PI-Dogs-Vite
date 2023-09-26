@@ -14,7 +14,7 @@ export const getDogs = () => {
             });
             
         } catch (error) {
-            console.log(error.message);
+            alert(error.response.data)
         }
         
     };
@@ -31,7 +31,7 @@ export const getByName =(name) =>{
             });
             
         } catch (error) {
-            alert(error.message);
+            alert(error.response.data)
         }
         
     };
@@ -48,7 +48,7 @@ export const getDetail =(id) =>{
                 payload:data,
             })
         } catch (error) {
-            console.log(error.message);
+            alert(error.response.data)
         }
     }
 }
@@ -77,17 +77,17 @@ export const getClean =() =>{
 }
 
 export const postDog =(createDog) =>{
-    const endpoint= `http://localhost:3001/dogs`;
+    const endpoint= 'http://localhost:3001/dogs';
 
     return async (dispatch) =>{
         try {
             const posted = await axios.post(endpoint,createDog);
+            console.log(posted);
+            alert(posted.data.message);
             return  dispatch ({ type:POST_DOG, payload: posted.data})
         } catch (error) {
-            console.log(error.message);
-            alert(error.message)
-            // response.status(404).json({error: error.message})
-            // alert('The dog can not be created');
+            console.log(error);
+            alert(error.response.data)
         }
     }
 }
