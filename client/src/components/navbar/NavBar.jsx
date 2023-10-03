@@ -2,7 +2,6 @@ import SearchBar from '../search/SearchBar';
 import { Link } from 'react-router-dom';
 import style from './NavBar.module.css';
 import { useSelector, useDispatch } from 'react-redux';
-import { useState } from 'react';
 import { orderByName, orderByWeight, filterOrigin, filterTemperament } from '../../redux/actions';
 
 
@@ -11,31 +10,26 @@ function Nav({ handleChange, handleSubmit, handleClick }) {  /* VIENEN DESDE HOM
 
   const dispatch = useDispatch();
   const temperaments = useSelector((state) => state.temperaments)
-  const [order, setOrder] = useState("");  /*  para guardar el tipo de orden a filtrar */
 
 
   function handleFiltTemp(event) {
     event.preventDefault();
     dispatch(filterTemperament(event.target.value));
-    setOrder(event.target.value);
   }
 
   function handleOrderName(event) {
     event.preventDefault();
     dispatch(orderByName(event.target.value));
-    setOrder(event.target.value);
   }
 
   function handleOrderWeight(event) {
     event.preventDefault();
     dispatch(orderByWeight(event.target.value));
-    setOrder(event.target.value);
   }
 
   function handleFiltOrigin(event) {
     event.preventDefault();
     dispatch(filterOrigin(event.target.value));
-    setOrder(event.target.value);
   }
 
 

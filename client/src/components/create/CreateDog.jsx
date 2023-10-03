@@ -11,13 +11,7 @@ function CreateDog() {
 
     const allTemperaments = useSelector(state => state.temperaments);
     const dispatch = useDispatch();
-
-    useEffect(() => {
-        dispatch(getTemperaments())
-
-        return () => dispatch(getDogs());
-    }, [dispatch])
-
+    
     // crear un estado local para guardar las respuestas
     const [state, setState] = useState({
         image: "",
@@ -35,6 +29,13 @@ function CreateDog() {
         temperament: "You must select at least one temperament"
     });
 
+    useEffect(() => {
+        dispatch(getTemperaments())
+
+        return () => dispatch(getDogs());
+    }, [dispatch])
+
+
     const handleChange = (event) => {
         event.preventDefault();
         
@@ -44,17 +45,16 @@ function CreateDog() {
             [event.target.name]: event.target.value
         })
 
-        // Es para poder agregar varios elemntos al array(state) de temperaments
+        // Para agregar varios elementos al array(state) de temperaments
         if (event.target.name === "temperament") {
-            if (state.temperament.includes(event.target.value)) return;  /* para que no se agregar temperamentos repetidos al perro */
+            if (state.temperament.includes(event.target.value)) return;  /* para que no agregar temperamentos repetidos al perro */
             setState({
                 ...state,
                 [event.target.name]: [...state[event.target.name], event.target.value]
-                // exmpl: temperament:[...state[temperament], happy] ---> Es para ir concatenando los temps al array sin perder info
             })
         }
 
-        setErrors(validate({ /*dentro del handleChange para que cadaa que se haga una modificación se valide lo que se escriba */
+        setErrors(validate({ /*cada que se haga una modificación se valide lo que se escriba */
             ...state,
             [event.target.name]: event.target.value
         }, event.target.name, errors))
@@ -82,8 +82,7 @@ function CreateDog() {
     return (
         <div className={style.divContForm}>
             <div className={style.divForm}>
-                {/* {console.log(errors)} */}
-                <form onSubmit={handleSubmit}> {/* onSubmit es un evento de la etiqueta Form por lo tanto va aquí */}
+                <form onSubmit={handleSubmit}>
                     <h2 className={style.h2Form}>CREATE YOUR DOG.... 🐶</h2>
 
                     <div className={style.divInputs}>

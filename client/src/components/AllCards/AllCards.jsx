@@ -3,7 +3,7 @@ import Card from '../cardDog/Card'; //Se importa Card para utilizarala de planti
 import style from './AllCards.module.css';
 import Pagination from '../pagination/Pagination';
 
-export default function Cards({ allDogs }) { //alldogs es un arreglo de obj que contiene la info de los personajes
+export default function Cards({ allDogs }) {
 
    const [currentPage, setCurrentPage] = useState(window.localStorage.getItem('currentPage'));
    const [dogsPage, setdogsPage] = useState(8);
@@ -12,7 +12,7 @@ export default function Cards({ allDogs }) { //alldogs es un arreglo de obj que 
 
    const currentDogs = allDogs.slice(firstDog, lastDog);
 
-   const pagination = (pageNumber) => { /* funcion para cambiar la pagina actual */ 
+   const pagination = (pageNumber) => { /* cambia la pagina actual */ 
       setCurrentPage(pageNumber);
       window.localStorage.setItem('currentPage', pageNumber);
    }
@@ -29,8 +29,8 @@ export default function Cards({ allDogs }) { //alldogs es un arreglo de obj que 
          <div className={style.divCardsL}>
 
             {
-               currentDogs?.map(({ id, image, name, height, weightMin, weightMax, temperament, life_span }) => { // Colocamos las props que requiere ( son pasadas a) card para crear una card
-                  return ( //Siempre lleva Return
+               currentDogs?.map(({ id, image, name, height, weightMin, weightMax, temperament, life_span }) => { 
+                  return ( 
                      <Card
                         key={id} //Para uso interno de React para identificar cada Card
                         id={id}

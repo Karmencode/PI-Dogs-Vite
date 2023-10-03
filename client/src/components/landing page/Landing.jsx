@@ -10,6 +10,7 @@ function Landing() {
                 <div className={style.divTextos}>
                     <h1>Do you like dogs?</h1>
                     <h2>This is the place for you</h2>
+                    <h2 className={style.h2Welcome}>Welcome to my individual proyect</h2>
 
                     <Link to='/home'>
                         <button>Lets Go! 🐶</button>
@@ -23,4 +24,3 @@ function Landing() {
 }
 
 export default Landing;
-{/* <div className={style.contenedorA}></div> */ }

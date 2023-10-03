@@ -8,3 +8,4 @@ export const FILTER_TEMPERAMENTS='FILTER_TEMPERAMENTS';
 export const ORDER_BY_NAME ='ORDER_BY_NAME';
 export const ORDER_BY_WEIGHT ='ORDER_BY_WEIGHT';
 export const POST_DOG = 'POST_DOG';
+export const GET_DOG_TEMPS = 'GET_DOG_TEMPS';

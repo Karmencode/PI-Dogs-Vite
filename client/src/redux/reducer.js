@@ -1,4 +1,4 @@
-import { POST_DOG, GET_ALL, GET_BY_NAME, GET_DETAIL, GET_TEMPERAMENTS, GET_CLEAN, FILTER_ORIGIN, FILTER_TEMPERAMENTS, ORDER_BY_NAME, ORDER_BY_WEIGHT } from './actionTypes';
+import { GET_DOG_TEMPS,POST_DOG, GET_ALL, GET_BY_NAME, GET_DETAIL, GET_TEMPERAMENTS, GET_CLEAN, FILTER_ORIGIN, FILTER_TEMPERAMENTS, ORDER_BY_NAME, ORDER_BY_WEIGHT } from './actionTypes';
 
 
 
@@ -38,15 +38,14 @@ function reducer(state = initialState, action) {
 
         case ORDER_BY_NAME:
 
-                // se crea una copia del arreglo antes de ordenarlo para mantener la inmutabilidad.
-              const sortedDogFilter1 = [...state.dogFilter].sort((a, b) => {  /* a y b cada uno toma un nombre (pug, dalmata)*/
+              const sortedDogFilter1 = [...state.dogFilter].sort((a, b) => {
                 const nameA = a.name?.toLowerCase() || ""; // Manejar valores nulos o indefinidos
                 const nameB = b.name?.toLowerCase() || "";
             
-                // Cuando la función de comparación devuelve 1, significa que el primer elemento (a) debería ir después del segundo elemento (b) en el ordenamiento. En otras palabras, a es considerado "mayor" que b
+                // si devuelve 1 el primer elemento (a) debería ir después del segundo elemento (b) en el ordenamiento.
                 if (nameA > nameB) return action.payload === "asc" ? 1 : -1;
 
-                // Cuando la función de comparación devuelve -1, significa que el primer elemento (a) debería ir antes del segundo elemento (b) en el ordenamiento. Porque a es considerado "menor" que b
+                // si devuelve -1, significa que el primer elemento (a) debería ir antes del segundo elemento (b) en el ordenamiento.
                 if (nameA < nameB) return action.payload === "asc" ? -1 : 1;
                 return 0;
               });
@@ -57,7 +56,7 @@ function reducer(state = initialState, action) {
               };
 
         case ORDER_BY_WEIGHT:
-            const { payload } = action; /* desestructuramos action.payload para saber si ordena por mínimo o máximo. */
+            const { payload } = action;
 
             const compareFunctionMin = (a, b) => {/*  para ordenar los valores mínimos de forma ascendente */
                 if (a.weightMin < b.weightMin) return -1;
@@ -75,7 +74,7 @@ function reducer(state = initialState, action) {
             let sortedMin = [...state.dogFilter.filter(item => payload === "min")].sort(compareFunctionMin);
             let sortedMax = [...state.dogFilter.filter(item => payload === "max")].sort(compareFunctionMax);
 
-            // Finalmente, concatenamos los dos arreglos ordenados (sortedMin y sortedMax) en un solo arreglo llamado sortedDogFilter. Esto nos da un arreglo ordenado según tus requisitos.
+            // concatenamos los dos arreglos ordenados (sortedMin y sortedMax) en un solo arreglo llamado sortedDogFilter
             const sortedDogFilter = sortedMin.concat(sortedMax);
 
             return {

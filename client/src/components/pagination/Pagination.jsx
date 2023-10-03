@@ -2,11 +2,11 @@ import React from "react";
 import style from './pagination.module.css';
 
 
-function Pagination({allDogs, pagination, dogsPage}){ /* los recibe desde allCards */
+function Pagination({allDogs, pagination, dogsPage}){
     
     const pageNumbers =[];
 
-    for(let i = 1; i <= Math.ceil(allDogs/dogsPage); i++){  /* Para saber el numero de paginas que debe crear en relacion a la cantidad de perros total y los perros a mostrar por hoja */
+    for(let i = 1; i <= Math.ceil(allDogs/dogsPage); i++){  /* Para saber el numero de paginas que debe crear */
         pageNumbers.push(i)
     }
 

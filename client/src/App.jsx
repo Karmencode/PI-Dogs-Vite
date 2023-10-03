@@ -1,6 +1,4 @@
 import { Routes, Route, useLocation, useNavigate } from 'react-router-dom';
-import { useState, useEffect } from 'react';
-import axios from 'axios'
 import Landing from './components/landing page/Landing';
 import Home from './components/home/Home';
 import Detail from './components/detail/Detail';
