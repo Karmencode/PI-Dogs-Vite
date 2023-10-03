@@ -61,9 +61,6 @@ const getAllDogs = async () =>{
         let dbDogs = await getAllDogsDb();
         let apiDogs = await getAllDogsApi();
 
-        /* console.log(dbDogs);
-        console.log(apiDogs); */
-
         if(!dbDogs || !apiDogs) throw new Error('Error loading data');
     
         let allDogs = apiDogs.concat(dbDogs);
@@ -79,4 +76,5 @@ const getAllDogs = async () =>{
 module.exports = {
 getAllDogs,
 getAllDogsApi,
-getAllDogsDb};
+getAllDogsDb
+};

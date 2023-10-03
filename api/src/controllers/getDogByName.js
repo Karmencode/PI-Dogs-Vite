@@ -5,8 +5,8 @@ const {getAllDogs} = require('./getAllDogs');
 
 async function getDogByName(req, res) {
     try {
-        const { name } = req.query;  /* Obtener el nombre por query */
-        const allDogs = await getAllDogs(); /* Obtener todos los perros para filtrar */
+        const { name } = req.query;
+        const allDogs = await getAllDogs();
 
         if(name){
             const findDogName = allDogs.filter((dog) => dog.name
