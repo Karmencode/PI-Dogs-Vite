@@ -5,13 +5,13 @@
 }
 
 .divForm{
-    background-color: rgba(168, 98, 5, 0.818);
+    background-color: rgba(0, 191, 255, 0.068);
     /* background-image: url('../images/form5.jpg'); */
     width: 370px;
     border: 1px solid grey;
     border-radius: 10px;
     padding: 25px;
-    color: black;
+    color: whitesmoke;
     font-weight: 700;
     margin-top: 20px;
     margin-left: 12vw;
@@ -20,12 +20,12 @@
 }
 
 .divPreVw{
-    background-color: rgba(168, 98, 5, 0.818);
+    background-color:  rgba(0, 191, 255, 0.068);
     width: 350px;
     border: 1px solid grey;
     border-radius: 10px;
     padding: 25px;
-    color: black;
+    color: whitesmoke;
     margin-left: 5vw;
     margin-top: 20px;
     text-align: center;
@@ -40,14 +40,14 @@
 .options{
     display: flex;
     flex-direction: row;
-    color: rgb(246, 255, 0);
+    color:  rgb(0, 191, 255);
     width: 350px;
     font-size:smaller;
     margin-top: 1.5em;
 }
 
 .input1{
-    background-color: rgba(250, 227, 198, 0.519);
+    background-color: rgba(255, 255, 255, 0.281);
     width: 25vw;
     height: 1.5vw;
     color: black;
@@ -55,7 +55,7 @@
 
 .h2Form{
     margin-top: 0;
-    color: rgba(70, 12, 12, 0.959);
+    color: rgb(0, 191, 255);
     font-weight: 800;
     font-size: 200%;
     text-align: center;
@@ -69,7 +69,7 @@ p{
     font-size: 95%;
 }
 .linkRetForm{
-    background-color: rgb(25, 6, 6);
+    background-color:  rgb(59, 59, 59);
     width: 5em;
     height: 2em;
     border-radius: 10px;
@@ -88,7 +88,7 @@ p{
     height: auto;
     font-size: x-small;
     padding: 5px;
-    background-color: rgb(90, 9, 9);
+    background-color:rgba(212, 223, 226, 0.425);
     margin-right: 10px;
 
 }

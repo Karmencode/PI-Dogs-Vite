@@ -1,5 +1,5 @@
 .divBar {
-    background-color: rgba(134, 28, 28, 0.384);
+    background-color: rgba(0, 191, 255, 0.26);
     width: 97.2vw;
     display: flex;
     flex-wrap: wrap;
@@ -11,7 +11,7 @@
 }
 
 .selectFilters{
-    background-color: rgb(83, 4, 4);
+    background-color: rgb(36, 36, 36);
     border-radius: 10px;
     color: whitesmoke;
     font-weight: bolder;

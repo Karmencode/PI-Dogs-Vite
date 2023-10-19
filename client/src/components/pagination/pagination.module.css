@@ -2,11 +2,11 @@
     width: fit-content;
     height: fit-content;
     font-size: x-small;
-    margin: 1px;
-    background-color: rgb(27, 1, 1);
+    margin: 2px;
+    background-color: rgba(0, 191, 255, 0.315);
 }
 .buttonPage:hover{
-    border-color: rgb(246, 22, 22);
+    border-color:  rgb(50, 231, 255);
 }
 
 .divPage{

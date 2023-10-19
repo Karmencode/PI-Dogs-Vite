@@ -21,11 +21,11 @@ a {
 }
 
 a:hover {
-  color: #d4b932d5;
+  color: rgb(0, 135, 139);
 }
 
 body {
-  background-image: url('./components/images/fondo3.jpg');
+  background-image: url('./components/images/nf6.jpg');
   background-size: cover;
   background-position: top, center;
   background-attachment: fixed;
@@ -50,13 +50,13 @@ button {
   font-size: 1em;
   font-weight: 500;
   font-family: inherit;
-  background-color: rgb(24, 4, 4);
+  background-color: rgb(36, 36, 36);
   cursor: pointer;
   transition: border-color 0.25s;
 }
 
 button:hover {
-  border-color:  #d4b932d5;;
+  border-color:  rgb(0, 135, 139);
 }
 
 button:focus,

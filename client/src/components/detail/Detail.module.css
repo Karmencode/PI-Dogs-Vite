@@ -15,8 +15,8 @@
 
 .divTxD{
     width: 35vw;
-    background-color: rgba(156, 114, 65, 0.485);
-    border: 1px solid burlywood;
+    background-color:  rgba(255, 255, 255, 0.089);;
+    border: 1px solid rgba(163, 234, 255, 0.438);
     border-radius: 5px;
     margin-top: 5px;
     margin-bottom: 5px;
@@ -42,9 +42,9 @@
     height: 30vw;
     border-radius: 15em;
     margin-top: 1rem;
-    filter:saturate(200%);
-    opacity: 0.85;
-    border: 20px solid rgba(206, 203, 28, 0.304);
+    /* filter:hue-rotate(180deg); */
+    opacity: 0.75;
+    border: 20px solid rgba(0, 191, 255, 0.26);
 
 }
 
@@ -58,11 +58,11 @@
     color: black;
 }
 .linkReturn{
-    background-color: rgb(25, 6, 6);
+    background-color: rgb(36, 36, 36);
     width: 5em;
     height: 2em;
     border-radius: 5px;
-    padding: 4px;
+    padding: 3px;
     font-size: larger;
     text-align: center;
     margin-left: 15vw;
