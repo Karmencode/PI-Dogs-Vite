@@ -1,5 +1,6 @@
 import {GET_DOG_TEMPS, GET_ALL, GET_BY_NAME,GET_DETAIL,GET_CLEAN,GET_TEMPERAMENTS,FILTER_ORIGIN,FILTER_TEMPERAMENTS,ORDER_BY_NAME, ORDER_BY_WEIGHT, POST_DOG} from './actionTypes';
 import axios from 'axios';
+import Swal from 'sweetalert2';
 
 
 export const getDogs = () => {
@@ -14,7 +15,14 @@ export const getDogs = () => {
             });
             
         } catch (error) {
-            alert(error.response.data)
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: error.response.data,
+                showConfirmButton: false,
+                timer: 1500
+              })
+            // alert(error.response.data)
         }
         
     };
@@ -31,7 +39,14 @@ export const getByName =(name) =>{
             });
             
         } catch (error) {
-            alert(error.response.data)
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: error.response.data,
+                showConfirmButton: false,
+                timer: 1500
+              })
+            // alert(error.response.data)
         }
         
     };
@@ -48,7 +63,14 @@ export const getDetail =(id) =>{
                 payload:data,
             })
         } catch (error) {
-            alert(error.response.data)
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: error.response.data,
+                showConfirmButton: false,
+                timer: 1500
+              })
+            // alert(error.response.data)
         }
     }
 }
@@ -64,7 +86,14 @@ export const getTemperaments =() =>{
                 payload:data,
             })
         } catch (error) {
-            alert(error.message);
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: error.response.data,
+                showConfirmButton: false,
+                timer: 1500
+              })
+            // alert(error.message);
         }
     }
 }
@@ -83,11 +112,25 @@ export const postDog =(createDog) =>{
         try {
             const posted = await axios.post(endpoint,createDog);
             console.log(posted);
-            alert(posted.data.message);
+            Swal.fire({
+                position: 'top-center',
+                icon: 'success',
+                title: posted.data.message,
+                showConfirmButton: false,
+                timer: 1500
+              })
+            // alert(posted.data.message);
             return  dispatch ({ type:POST_DOG, payload: posted.data})
         } catch (error) {
             console.log(error);
-            alert(error.response.data)
+            Swal.fire({
+                position: 'top-center',
+                icon: 'error',
+                title: error.response.data,
+                showConfirmButton: false,
+                timer: 1500
+              })
+            // alert(error.response.data)
         }
     }
 }
